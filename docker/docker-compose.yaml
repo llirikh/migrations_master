@@ -7,6 +7,8 @@ services:
           - POSTGRES_HOST_AUTH_METHOD=trust
           - POSTGRES_USER=testsuite
           - POSTGRES_PASSWORD=testsuite
+        volumes:
+          - ../resources:/resources:ro
         healthcheck:
             test: ["CMD-SHELL", "pg_isready -U postgres"]
             interval: 10s
